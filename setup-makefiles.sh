@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=sagit
+DEVICE=msm8998-common
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2017

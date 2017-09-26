@@ -14,8 +14,10 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/xiaomi/sagit/sagit-vendor.mk)
+$(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -30,7 +32,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:system/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
@@ -263,7 +264,7 @@ PRODUCT_COPY_FILES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_sagit
+    librecovery_updater_xiaomi
 
 # Releasetools
 PRODUCT_COPY_FILES += \
