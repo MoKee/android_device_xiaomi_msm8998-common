@@ -139,11 +139,11 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-# CM Hardware
+# MK Hardware
 BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    $(VENDOR_PATH)/cmhw
-BOARD_USES_CYANOGEN_HARDWARE := true
+    hardware/mokee/mkhw \
+    $(VENDOR_PATH)/mkhw
+BOARD_USES_MOKEE_HARDWARE := true
 TARGET_TAP_TO_WAKE_NODE :=  "/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input1/wake_gesture"
 
 # CNE and DPM
