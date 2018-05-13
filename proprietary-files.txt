@@ -211,16 +211,7 @@ vendor/lib64/libubifocus.so
 vendor/lib/libSonyIMX386PdafLibrary.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera ISP
 vendor/lib/libmmcamera_isp_abf48.so
@@ -435,7 +426,6 @@ vendor/firmware/a540_zap.mdt
 
 # IMS
 -app/ims/ims.apk
--app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib64/libdiag_system.so
@@ -583,19 +573,10 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
 # RIL
 -app/datastatusnotification/datastatusnotification.apk
--app/embms/embms.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
--app/radioconfig/radioconfig.apk
-etc/modem/Diag.cfg
-etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/radioconfig.xml
-etc/permissions/radioconfiginterface.xml
-etc/permissions/telephonyservice.xml
-framework/embmslibrary.jar
--framework/qcrilhook.jar
+framework/qcrilhook.jar
 framework/qti-telephony-common.jar
-framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
