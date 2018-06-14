@@ -36,11 +36,6 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
 
 # Bluetooth
 vendor/bin/wcnss_filter
@@ -410,7 +405,7 @@ vendor/lib/libvqzip.so
 -vendor/lib64/libgpustats.so
 
 # NFC firmware
-vendor/firmware/libpn553_fw.so
+vendor/firmware/libpn553_fw.so|d032117e6645395327a5acd236bfd1bec56569c0
 
 # Perf
 vendor/bin/energy-awareness
