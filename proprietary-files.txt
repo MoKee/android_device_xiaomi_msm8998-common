@@ -43,9 +43,9 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbtnv.so
 
 # Camera
-lib/libMiCameraHal.so|799fe89fabb1ebdbc18b35ed2c72effe95ca7c91
-lib/libmisk.so|7679f1434e1186b62d831b74b11577a1cca8db94
-lib/libtrueportrait.so
+lib/libMiCameraHal.so:vendor/lib/libMiCameraHal.so
+lib/libskia.so:vendor/lib/libmisk.so
+lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 lib64/libblurbuster.so
 lib64/libfiltergenerator.so
 lib64/libjni_blurbuster.so
@@ -65,7 +65,7 @@ lib64/libjni_ubifocus.so
 lib64/libseestraight.so
 lib64/libtrueportrait.so
 lib64/libtruescanner.so
-vendor/lib/hw/camera.msm8998.so|a82139eecab8cc585473e3e3f7cd347aeb68650a
+vendor/lib/hw/camera.msm8998.so
 vendor/lib/lib_lowlight.so
 vendor/lib/lib_lowlight_dxo.so
 vendor/lib/libarcsoft_beauty_shot.so
@@ -161,7 +161,7 @@ vendor/lib64/libubifocus.so
 vendor/lib/libSonyIMX386PdafLibrary.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_12_0.fw
+etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
 # Camera ISP
 vendor/lib/libmmcamera_isp_abf48.so
@@ -342,7 +342,7 @@ vendor/firmware/a540_zap.mdt
 # IMS
 -app/ims/ims.apk
 -app/uceShimService/uceShimService.apk
-etc/permissions/qti-vzw-ims-internal.xml
+etc/permissions/qti-vzw-ims-internal.xml:vendor/etc/permissions/qti-vzw-ims-internal.xml
 lib64/libdiag_system.so
 lib64/lib-imscamera.so
 lib64/lib-imsvideocodec.so
@@ -389,12 +389,6 @@ vendor/lib64/hw/keystore.msm8998.so
 vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libsmwrapper.so
 
-# Machine Learning
--vendor/etc/lm/ReferenceFeature.xml
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters.so
-vendor/lib64/libreffeature.so
-
 # Media
 -vendor/lib/libgpustats.so
 vendor/lib/libOmxEvrcDec.so
@@ -438,9 +432,9 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
-etc/permissions/qti_permissions.xml
-lib64/libqminvapi.so
+etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
+lib64/libqminvapi.so:vendor/lib64/libqminvapi.so
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
@@ -483,7 +477,6 @@ framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
-vendor/bin/port-bridge
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
