@@ -38,6 +38,10 @@ on init
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+    # Disable UFS powersaving
+    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 0
+    write /sys/devices/soc/1da4000.ufshc/clkgate_enable 0
+
     # Set up schedtune
     write /dev/stune/background/schedtune.colocate 0
     write /dev/stune/foreground/schedtune.colocate 0
@@ -189,13 +193,17 @@ on post-fs-data
     mkdir /data/thermal/config 0771 system system
 
 on property:sys.boot_completed=1
+    # Enable UFS powersaving
+    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
+    write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
+
     # Post-boot fs tuning
     write /sys/block/sda/queue/iostats 1
     write /sys/block/sda/queue/nr_requests 128
-    write /sys/block/sda/queue/read_ahead_kb 1024
+    write /sys/block/sda/queue/read_ahead_kb 128
     write /sys/block/sde/queue/iostats 1
     write /sys/block/sde/queue/nr_requests 128
-    write /sys/block/sde/queue/read_ahead_kb 1024
+    write /sys/block/sde/queue/read_ahead_kb 128
     setprop sys.io.scheduler "bfq"
 
     write /dev/cpuset/top-app/cpus 0-7
@@ -231,6 +239,10 @@ on charger
 
     wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+
+    # Enable UFS powersaving
+    write /sys/devices/soc/1da4000.ufshc/clkscale_enable 1
+    write /sys/devices/soc/1da4000.ufshc/clkgate_enable 1
 
     start vendor.hvdcp_opti
     start vendor.thermal-engine
