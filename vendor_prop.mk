@@ -20,12 +20,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     aaudio.mmap_exclusive_policy=2 \
     aaudio.mmap_policy=2 \
     af.fast_track_multiplier=2 \
-    audio.adm.buffering.ms=6 \
     audio.deep_buffer.media=true \
     audio.offload.min.duration.secs=15 \
     audio.offload.video=true \
-    persist.audio.dirac.speaker=true \
-    persist.audio.speaker.dualmode=true \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
@@ -35,6 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=11 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
+    vendor.audio.adm.buffering.ms=6 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
@@ -56,16 +54,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=cherokee \
+    vendor.qcom.bluetooth.soc=cherokee \
     ro.bluetooth.hfp.ver=1.6
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1 \
-    persist.camera.set.afd=4 \
     persist.camera.xm.green.b=0.96 \
     persist.camera.xm.green.r=0.97 \
-    persist.dualcam.lpm.enable=1 \
+    persist.ts.rtmakeup=false \
+    persist.vendor.camera.HAL3.enabled=1 \
+    persist.vendor.camera.set.afd=4 \
+    persist.vendor.dualcam.lpm.enable=1 \
     vendor.camera.aux.packagelist=com.android.camera,org.mokee.snap \
     vidc.enc.dcvs.extra-buff-count=2
 
@@ -135,11 +134,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.mode=concurrent \
-    persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.dynamic_sar=false \
     persist.radio.multisim.config=dsds \
     persist.rmnet.data.enable=true \
+    persist.vendor.data.mode=concurrent \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.force_on_dc=true \
     persist.vendor.radio.rat_on=combine \
@@ -149,17 +148,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-wrapper.so \
     ro.telephony.default_cdma_sub=0 \
     ro.telephony.default_network=22,22 \
-    ro.use_data_netmgrd=true \
+    ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1 \
     vendor.voice.path.for.pcm.voip=true
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.sensors.cfos=false \
-    persist.sys.sensors.pug=false \
-    persist.sys.sensors.spg=false \
     ro.qti.sensors.taptap_gesture=true \
     ro.vendor.sdk.sensors.gestures=false \
+    ro.vendor.sensors.cfos=false \
     ro.vendor.sensors.cmc=false \
     ro.vendor.sensors.dev_ori=false \
     ro.vendor.sensors.dpc=true \
@@ -168,11 +165,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.mot_detect=true \
     ro.vendor.sensors.multishake=true \
     ro.vendor.sensors.pmd=false \
+    ro.vendor.sensors.pug=true \
+    ro.vendor.sensors.spg=false \
     ro.vendor.sensors.sta_detect=true
 
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.delta_time.enable=true
+    persist.vendor.delta_time.enable=true
 
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \

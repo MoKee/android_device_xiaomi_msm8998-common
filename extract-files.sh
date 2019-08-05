@@ -59,30 +59,14 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/etc/init/vendor.xiaomi.hardware.mtdservice@1.2-service.rc)
+        sed -i '/group/ i\    user system' "${2}"
+        ;;
     vendor/etc/permissions/qti_libpermissions.xml)
         sed -i 's|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g' "${2}"
         ;;
-    vendor/etc/permissions/qti-vzw-ims-internal.xml)
-        sed -i 's|/system/vendor/framework/qti-vzw-ims-internal.jar|/vendor/framework/qti-vzw-ims-internal.jar|g' "${2}"
-        ;;
     vendor/etc/permissions/qcrilhook.xml)
         sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
-        ;;
-    vendor/lib/libMiCameraHal.so)
-        sed -i 's|system/etc/dualcamera.png|vendor/etc/dualcamera.png|g' "${2}"
-        patchelf --replace-needed "libicuuc.so" "libicuuc-v27.so" "${2}"
-        ;;
-    vendor/lib/hw/camera.msm8998.so)
-        patchelf --replace-needed "libminikin.so" "libminikin-v27.so" "${2}"
-        ;;
-    vendor/lib/libicuuc-v27.so)
-        patchelf --set-soname "libicuuc-v27.so" "${2}"
-        ;;
-    vendor/lib/libminikin-v27.so)
-        patchelf --set-soname "libminikin-v27.so" "${2}"
-        ;;
-    vendor/lib/libmmcamera2_sensor_modules.so)
-        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
         ;;
     vendor/lib/libFaceGrade.so)
         patchelf --remove-needed "libandroid.so" "${2}"
@@ -95,26 +79,6 @@ function blob_fixup() {
         ;;
     vendor/lib/libmpbase.so)
         patchelf --remove-needed "libandroid.so" "${2}"
-        ;;
-    vendor/lib64/lib-dplmedia.so)
-        patchelf --remove-needed "libmedia.so" "${2}"
-        ;;
-    vendor/lib/soundfx/libdirac.so)
-        patchelf --remove-needed "libmedia.so" "${2}"
-        ;;
-    vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc)
-        sed -i "/ disabled/Q" "${2}"
-        ;;
-    vendor/bin/mlipayd)
-        patchelf --remove-needed "libandroid_runtime.so" "${2}"
-        patchelf --remove-needed "vendor.xiaomi.hardware.mtdservice@1.0.so" "${2}"
-        ;;
-    vendor/lib64/libmlipay.so)
-        patchelf --remove-needed "libandroid_runtime.so" "${2}"
-        patchelf --remove-needed "vendor.xiaomi.hardware.mtdservice@1.0.so" "${2}"
-        ;;
-    vendor/lib/libaudcal.so)
-        sed -i "s|\/data\/vendor\/misc\/audio\/acdbdata\/delta\/|\/data\/vendor\/audio\/acdbdata\/delta\/\x00\x00\x00\x00\x00|g" "${2}"
         ;;
     esac
 }

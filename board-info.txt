@@ -1,1 +1,2 @@
-require version-trustzone=TZ.BF.4.0.6-00124|TZ.BF.4.0.6-00130
+require version-trustzone=TZ.BF.4.0.6-00178
+require version-firmware=9.5.16

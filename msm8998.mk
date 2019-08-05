@@ -137,6 +137,7 @@ PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0_32 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
@@ -167,11 +168,13 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msm8998 \
+    move_fingerprint_data.sh
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -309,7 +312,8 @@ PRODUCT_PACKAGES += \
     init.panel_info.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sh
+    init.qcom.sh \
+    move_widevine_data.sh
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -359,7 +363,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk_package
+    vndk-sp
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
@@ -371,7 +375,6 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libwpa_client \
     hostapd \
-    readmac \
     wpa_supplicant \
     wpa_supplicant.conf
 

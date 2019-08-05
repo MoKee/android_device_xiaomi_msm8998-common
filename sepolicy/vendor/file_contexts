@@ -1,5 +1,5 @@
-# CNE
-/data/connectivity(/.*)?                                      u:object_r:cnd_core_data_file:s0
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.0-service\.widevine         u:object_r:hal_drm_widevine_exec:s0
 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_msm8998 u:object_r:hal_fingerprint_default_exec:s0
@@ -7,8 +7,11 @@
 /data/misc/fpc(/.*)?                                          u:object_r:fingerprintd_data_file:s0
 /data/misc/gf_data(/.*)?                                      u:object_r:fingerprintd_data_file:s0
 /data/misc/goodix(/.*)?                                       u:object_r:fingerprintd_data_file:s0
+/data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_vendor_data_file:s0
 /(mnt/vendor)/persist/fpc(/.*)?                               u:object_r:fingerprint_persist_file:s0
 /sys/devices/soc/soc:fingerprint_fpc(/.*)?                    u:object_r:fingerprint_sysfs:s0
+/system/bin/move_fingerprint_data\.sh                         u:object_r:move-fp-data-sh_exec:s0
 
 # HVDCP
 /sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
@@ -21,10 +24,10 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_msm8998 u:object_r:hal_light_default_exec:s0
 
 # Mlipay
-/(vendor|system/vendor)/bin/mlipayd                           u:object_r:hal_mlipay_default_exec:s0
-
-# Readmac
-/(vendor|system/vendor)/bin/readmac                           u:object_r:wcnss_service_exec:s0
+/(vendor|system/vendor)/bin/fidoca                            u:object_r:hal_mfidoca_default_exec:s0
+/(vendor|system/vendor)/bin/mlipayd@1.1                       u:object_r:hal_mlipay_default_exec:s0
+/(vendor|system/vendor)/bin/mtd@1.2                           u:object_r:hal_mtdservice_default_exec:s0
+/(vendor|system/vendor)/bin/tidad@1.1                         u:object_r:hal_tidaservice_default_exec:s0
 
 # Remote storage
 /sys/kernel/debug/rmt_storage/rmts                            u:object_r:debugfs_rmts:s0
@@ -35,4 +38,4 @@
 
 # Thermal engine
 /data/decrypt\.txt                                            u:object_r:thermal_decrypt_file:s0
-/data/thermal(/.*)?                                           u:object_r:thermal_data_file:s0
+/data/vendor/thermal(/.*)?                                    u:object_r:thermal_data_file:s0
