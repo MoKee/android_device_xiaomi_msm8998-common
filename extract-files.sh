@@ -65,9 +65,6 @@ function blob_fixup() {
     vendor/etc/permissions/qti_libpermissions.xml)
         sed -i 's|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g' "${2}"
         ;;
-    vendor/etc/permissions/qcrilhook.xml)
-        sed -i 's|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g' "${2}"
-        ;;
     vendor/lib/libMiCameraHal.so)
         sed -i 's/libicuuc.so/libicuuQ.so/g' "${2}"
         sed -i 's/libminikin.so/libminikiQ.so/g' "${2}"
