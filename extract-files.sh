@@ -75,6 +75,18 @@ function blob_fixup() {
     vendor/lib/libicuuQ.so)
         sed -i 's/libicuuc.so/libicuuQ.so/g' "${2}"
         ;;
+    vendor/lib/libFaceGrade.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        ;;
+    vendor/lib/libarcsoft_beauty_shot.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        ;;
+    vendor/lib/libmmcamera2_stats_modules.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        ;;
+    vendor/lib/libmpbase.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        ;;
     esac
 }
 
